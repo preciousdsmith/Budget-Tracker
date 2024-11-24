@@ -2,3 +2,17 @@
 body {
   background: linear-gradient(to left, rgb(0, 255, 166), rgb(0, 217, 255));
 }/*# sourceMappingURL=styles.css.map */
+
+#final-totalBtn{
+  background-color: rgb(161, 222, 161);
+  height: 40px;
+}
+
+#final-incomeBtn {
+  background-color: rgb(161, 222, 161);
+}
+
+
+.final-ExpensesBtn {
+background-color: rgb(161, 222, 161);
+}

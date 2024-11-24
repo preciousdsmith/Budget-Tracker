@@ -1,35 +1,35 @@
 class Budget{ //created a class called budget
-constructor (){                  //created constructor, everything inside of the curly braces are apart of the budget
+constructor (){  //created constructor, everything inside of the curly braces are apart of the budget
     //making arrays that belong to the budget
-this.expensesArray = []
-this.incomeArray = [] //set them equal, income is a property
-this.finalIncome = 0; 
-this.finalExpenses = 0; 
+this.expensesArray = []// An empty array to store the expenses
+this.incomeArray = [] //An empty array to store the income amounts
+this.finalIncome = 0; // A variable to hold the total income
+this.finalExpenses = 0; // A variable to hold the total expenses
 }
 calculateIncome() {//methods
 const incomeInput = document.getElementById("final-income") //grabbed the HTML tag
-const incomeInputBtn = document.getElementById("final-incomeBtn")
+const incomeInputBtn = document.getElementById("final-incomeBtn")// Get the button that submits the income input
 let finalIncome = 0
-incomeInputBtn.addEventListener("click",()=>{//the function keyword and the this keyword does not work well in a class 
-    if(incomeInput.value.trim()===""){
-        alert("Income box empty")
+incomeInputBtn.addEventListener("click",()=>{// Add an event listener to the income button
+    if(incomeInput.value.trim()===""){// If the income input is empty
+        alert("Income box empty")// Alert the user that the income box is empty
     }
-const incomeInputValue = Number(incomeInput.value)
+const incomeInputValue = Number(incomeInput.value)// Convert the input value to a number
 if (!isNaN(incomeInputValue)){
-    this.incomeArray.push(incomeInputValue);
+    this.incomeArray.push(incomeInputValue); // If it's valid, push the value into the income array
 } else {
-    alert("please enter a valid number")
+    alert("please enter a valid number")// If it's not a valid number, alert the user
 }
 this.finalIncome = this.incomeArray.reduce((firstNumber, secondNumber) => firstNumber + secondNumber, 0);
-console.log("Total income:", this.finalIncome);
+console.log("Total income:", this.finalIncome);// Log the total income to the console for debugging
 })//running code whenver user clicks on button
 
 }
 calculateExpense(){
-const expensesInput = document.querySelector(".expenses-amount")
-const expensesInputBtn = document.querySelector(".final-ExpensesBtn")
-expensesInputBtn.addEventListener("click",()=>{
-    if(expensesInput.value.trim()===""){
+const expensesInput = document.querySelector(".expenses-amount")// Get the input field where the user enters their expenses
+const expensesInputBtn = document.querySelector(".final-ExpensesBtn")// Get the button that submits the expense input
+expensesInputBtn.addEventListener("click",()=>{// Add an event listener to the expenses button
+    if(expensesInput.value.trim()===""){// If the expense input is empty
         alert("expenses box empty")
     }
 const expensesInputValue = Number(expensesInput.value) //convert the string into a number

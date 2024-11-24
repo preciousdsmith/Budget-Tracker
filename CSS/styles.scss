@@ -1,0 +1,21 @@
+@import '/CSS/styles.css';
+
+
+
+$primary-color:  rgb(0, 255, 166);
+
+
+$buttoncolor: rgb(0, 217, 255);
+
+@mixin gradient($color1, $color2) {
+    background: linear-gradient(to left, $color1, $color2);
+}
+
+body {
+    @include gradient($primary-color, $buttoncolor);//@ adds the mixin
+display: grid;
+place-content: center;
+height: 100%;
+width: 100%;
+}
+
